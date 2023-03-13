@@ -44,6 +44,7 @@ export async function getStaticProps(context) {
         description: meetup.description,
         image: meetup.image,
       },
+      revalidate: 1,
     },
   };
 }
@@ -68,7 +69,6 @@ export async function getStaticPaths() {
         meetupId: meetup._id.toString(),
       },
     })),
-    revalidate: 1,
     /* paths: [
       {
         params: {
